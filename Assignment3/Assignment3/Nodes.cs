@@ -23,9 +23,9 @@ namespace Assignment3
             this.Next = null;
         }
 
-        public Nodes(int id, string name, string email, int creditcard)
+        public Nodes(int id, string name, string email, string password)
         {
-            User newUser = new User(id, name, email, creditcard);
+            User newUser = new User(id, name, email, password);
 
             this.Data = newUser;
             this.Next = null;
