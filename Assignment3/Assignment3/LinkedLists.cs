@@ -8,31 +8,36 @@ namespace Assignment3
 {
     public class LinkedList : ILinkedListADT
     {
-        public node Head { get; set; }
+        public Node Head { get; set; }
 
         public LinkedList()
         {
-            Head = new node();
+            Head = new Node();
         }
 
         public void Prepend(object data)
         {
-            Node AddFirst = new Node();
-            to.Add.data = data;
-            Node current = Head;
-            current.First = toAdd;
+            Node newNode = new Node(data);
+            newNode.Next = Head;
+            Head = newNode;
         }
 
         public void Append(object data)
         {
-            Node AddLast = new Node();
-            to.Add.data = data;
+            Node newNode = new Node(data);
+
             Node current = Head;
-            current.Last = toAdd;
+            while (current.Next != null)
+            {
+            current = current.Next;
+            }
+            current.Next = newNode;
         }
 
         public void Remove(object data)
         {
+        Node current = Head;
+        
             for (int i = 0; i < index - 1; i++)
             {
                 if (Head.Next == null)
@@ -40,7 +45,14 @@ namespace Assignment3
                     throw new IndexOutOfRangeException("Attempt to remove from after end of list.");
                 }
 
-                Head = Head.Next;
+                while (current.Next != null)
+                {
+                if (current.Next.Data.Equals(data))
+                {
+                current.Next = current.Next.Next;
+                }
+                }
+                current = current.Next;
             }
 
             Head.Next = Head.Next.Next;
@@ -49,47 +61,125 @@ namespace Assignment3
 
         public void RemoveFirst()
         {
-            Head.next = null;
+        if (Head = null)
+        {
+        throw new IndexOutOfRangeException("Attempt to remove from empty list.");
+        }
+            Node Head = null;
+            Head = current.Next;
         }
 
         public void RemoveLast()
         {
-            while (Head.Next = null) ;
+            Node current = Head;
+            while (current.Next != null)
+            {
+            current = current.Next;
+            }
+            current.Next = null;
+            if (Head = null)
+        {
+        throw new IndexOutOfRangeException("Attempt to remove from empty list.");
+        }
+        if (Head.next == null)
+        {
+        throw new IndexOutOfRangeException("Attempt to remove last from 1 node list.");
+        }
         }
 
         public void AddIndex(int index, object data)
         {
-            LinkedList<int> ll;
-            ll.FindIndex().Value = "";
+            if (index < 1)
+        {
+        throw new IndexOutOfRangeException("Attempt to add from before start of list.");
+        }
+            if (index == null)
+        {
+        throw new IndexOutOfRangeException("Attempt to add from after end of list.");
+        }
+        
+        while (current.Next != null)
+                {
+                if (current.Next.Index.Equals(Index))
+                {
+                current = current.Next;
+                }
+        }
+        }
         }
 
+        
         public void Replace(int index, object data)
         {
-            Node Head = users.Head;
+            if (index < 1)
+        {
+        throw new IndexOutOfRangeException("Attempt to replace from before start of list.");
+        }
+            if (index == null)
+        {
+        throw new IndexOutOfRangeException("Attempt to replace from after end of list.");
+        }
 
             for (int i = 0; i < index; i++)
             {
-                Head = Head.Next;
+                current = current.Next;
             }
-            Head.Data = value;
+
+            while (current.Next != null)
+                {
+                if (current.Next.Index.Equals(Index))
+                {
+                current = (data);
+                }
 
             Assert.AreEqual(value.Name, users.Head.Next.Next.Data.Name);
         }
 
-            public void FindItem(object data)
+            public void FindItem(object item)
         {
-            LinkedList.Find();
+            Node current = Head;
+            while (current.Next != null)
+                {
+                if (current.Data.Equals(item))
+                {
+                return current;
+                }
+                current = current.Next;
         }
-
-        public void FindIndex(object data)
+         if (item == null)
         {
-            LinkedList.indexOf();
+        throw new IndexOutOfRangeException("Attempt to retrive item not in list.");
+        }
+        }
+        
+
+        public void FindIndex(object item)
+        {
+            Node current = Head;
+
+            while (current != null)
+            {
+            if (current.Data.Equals(item))
+            {
+            return index;
+            }
+                current = current.Next;
+                index++;
+            }
+                     if (item == null)
+        {
+        throw new IndexOutOfRangeException("Attempt to retrive item not in list.");
+        }
         }
 
         public void Check()
         {
             node * list;
-            if (list == null) { "No items in list" }
+            if (Head == null)
+            {
+                "No items in list" 
+            }
+            else {return}
         }
 
         public void Clear()
@@ -97,16 +187,21 @@ namespace Assignment3
             Head.next = null;
         }
 
-        public void Count()
+        public int Count()
         {
-            int total = 0;
-            foreach Node(total += 1)
-            return ("There are", total, "items in the list");
+            int count = 0;
+            Node current = Head;
+            while (current != null)
+            {
+            count++;
+            current = current.Next;
+            }
+            return count;
         }
 
-        public void Reverse()
+        public void AlphaOrder()
         {
-
+        User = User.OrderBy(User.name).ToList();
         }
     }
 }
