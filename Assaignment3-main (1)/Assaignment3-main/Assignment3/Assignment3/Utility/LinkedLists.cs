@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Data.SqlTypes;
 using System.Linq;
@@ -28,7 +28,7 @@ namespace Assignment3
         {
             Node newNode = new Node(data);
 
-            if (Head == null)
+            if (Head.Data == null)
             {
                 Head = newNode;
                 return;
@@ -76,7 +76,7 @@ namespace Assignment3
 
         public void RemoveFirst()
         {
-            if (Head == null)
+            if (Head.Data == null)
             {
                 throw new InvalidOperationException("Attempt to remove from empty list.");
             }
@@ -85,7 +85,7 @@ namespace Assignment3
 
         public void RemoveLast()
         {
-            if (Head == null)
+            if (Head.Data == null)
             {
                 throw new InvalidOperationException("Attempt to remove from empty list.");
             }
@@ -137,12 +137,20 @@ namespace Assignment3
 
         public bool IsEmpty()
         {
-            return Head == null;
+            if (Head.Data != null)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
         }
 
         public void Clear()
         {
-            Head = null;
+            Head.Data = null;
+            Head.Next = null;
         }
 
         public void AddLast(User value)
@@ -187,11 +195,15 @@ namespace Assignment3
         public int Count()
         {
             int count = 0;
-            Node current = Head;
-            while (current != null)
+            if (Head.Data != null)
             {
-                count++;
+                count = 1;
+            }
+            Node current = Head;
+            while (current.Next != null)
+            {
                 current = current.Next;
+                count++;
             }
             return count;
         }
