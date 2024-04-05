@@ -1,0 +1,5 @@
+C:\Users\rgh2k\Downloads\Assaignment3-main (1)\Assaignment3-main\Assignment3\Assignment3.Tests\obj\Debug\net6.0\Assignment3.Tests.csproj.AssemblyReference.cache
+C:\Users\rgh2k\Downloads\Assaignment3-main (1)\Assaignment3-main\Assignment3\Assignment3.Tests\obj\Debug\net6.0\Assignment3.Tests.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\rgh2k\Downloads\Assaignment3-main (1)\Assaignment3-main\Assignment3\Assignment3.Tests\obj\Debug\net6.0\Assignment3.Tests.AssemblyInfoInputs.cache
+C:\Users\rgh2k\Downloads\Assaignment3-main (1)\Assaignment3-main\Assignment3\Assignment3.Tests\obj\Debug\net6.0\Assignment3.Tests.AssemblyInfo.cs
+C:\Users\rgh2k\Downloads\Assaignment3-main (1)\Assaignment3-main\Assignment3\Assignment3.Tests\obj\Debug\net6.0\Assignment3.Tests.csproj.CoreCompileInputs.cache
